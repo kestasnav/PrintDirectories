@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,156 +19,54 @@
         }
         #nav {
             text-decoration: none;
-            font-size: 40px;
+            font-size: 20px;
             border: 2px solid black;
             border-radius: 20px;
-            width: 300px;
+            width: 150px;
             padding: 20px;
             text-align: center;
             background-color: lawngreen;
             color: white;
         }
         li, a {
+            text-decoration: none;
             list-style: none;
             text-emphasis: none;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
-        .folders {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        .back {
+      
+        .btn {
             text-decoration: none;
-            font-size: 10px;
+            font-size: 15px;
             border: 1px solid black;
             width: 100px;
-            padding: 10px;
+            padding: 6px;
             text-align: center;
             background-color: red;
             color: white;
+            margin: 5px;
+          
         }
         .knopkes {
             float: right;
         }
+        img {
+            padding-right: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+       
     </style>
 </head>
 <body>
     <div class="container">
-    <a id="nav" href="pirma.php">Pirma užduotis</a>
     
-
-    <?php
-    
-
-function printDir($dir){
-    
-
-    $d=opendir($dir);
-    echo "<ul>";
-    
-    while($item=readdir($d)){
-        if ($item=='.' ){
-          continue;
-      }
-     
-
-      if (is_dir($dir.'/'.$item) ){
-        $diras='';
-        if (isset($_GET['dir'])) {
-            $diras=$_GET['dir'];
-        }
-        $pirmasKelias='http://localhost/RekursinesFunkcijos/antra.php?dir='. $diras;
-       
-          
-          if($item == '..') 
-          { 
-            echo "<a class='back' href=" . $pirmasKelias . '/' . $item .">";
-           
-            echo "Go Back";
-        } else 
-        { 
-            echo' <div class="visos_knopkes">'; 
-            echo "<li class='folders'> <a href=" . $pirmasKelias . '/' . $item ."><img src='folder.png' style='width:24px'>";
-           
-          echo  $item;
-          echo' <div class="knopkes">'; 
-          echo '<form action="delete.php" method="post">';
-          echo '<input type="submit" name="redaguoti" value="redaguoti">';
-          echo '<input type="submit" name="trinti" value="trinti">';
-          echo'</form>';
-          echo' <div>';
-          echo' <div>';
-        }
-          echo "</a>";
-          
-          echo "</li>";
-      }else{
-          echo "<li class='folders'>";
-          echo' <div class="visos_knopkes">';
-
-          $ext=pathinfo($dir."/".$item,PATHINFO_EXTENSION);
-          if ($ext=='php'){
-              echo "<img src='php.svg' style='width:24px'>";              
-          }
-          else if ($ext=='txt'){
-            echo "<img src='text.png' style='width:24px'>";              
-        }
-          else if ($ext=='css'){
-            echo "<img src='css.png' style='width:24px'>";              
-        }
-         else if ($ext=='html') {
-            echo "<img src='html.png' style='width:24px'>";
-        } else {
-           echo "<img src='NA.png' style='width:24px'>";
-        }
-        
-        if ($ext=='php' || $ext=='ini' || $ext=='txt'){
-        $diras='';
-        if (isset($_GET['dir'])) {
-            $diras=$_GET['dir'];
-        }
-        
-        echo '<a href="trecia.php?dir='.$diras.'/'.$item.'"target=_blank rel="noopener noreferrer">'.$item.'</a>';
-        echo' <div class="knopkes">'; 
-        echo '<form action="delete.php" method="post">';
-        echo '<input type="submit" name="redaguoti" value="redaguoti">';
-        echo '<input type="submit" name="trinti" value="trinti">';
-        echo'</form>';
-        echo' <div>';
-        echo' <div>';
-       echo '</li>';
-       
-    } else {
-       
-        echo $item;
-        echo' <div class="knopkes">'; 
-        echo '<form action="delete.php" method="post">';
-        echo '<input type="submit" name="redaguoti" value="redaguoti">';
-        echo '<input type="submit" name="trinti" value="trinti">';
-        echo'</form>';
-        echo' <div>';
-        echo' <div>';
-    }
-  
-      }
-    }
-    closedir($d);
-    echo "</ul>";
-   
-  }
-  
- // $dir='C:/Users/kesta/OneDrive/Documents/FrontEnd';
-  $dir= 'C:/xampp/htdocs';
-  $diras='';
-  if (isset($_GET['dir'])) {
-      $diras=$_GET['dir'];
-  }
-  printDir($dir.'/'.$diras);
-  
  
-  
+    <h4>Jūs esate prisijungęs: </h4>
+    <a class='btn' href="login.php?logout=1">Atsijungti</a>
 
-
-?>
+   
     </div>
    
 </body>

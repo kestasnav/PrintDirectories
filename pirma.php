@@ -17,10 +17,10 @@
         }
         a {
             text-decoration: none;
-            font-size: 40px;
+            font-size: 20px;
             border: 2px solid black;
             border-radius: 20px;
-            width: 300px;
+            width: 150px;
             padding: 20px;
             text-align: center;
             background-color: lawngreen;
@@ -30,7 +30,7 @@
 </head>
 <body>
     <div class="container">
-        <a href="antra.php">Antra užduotis</a>
+        <a href="funkcija.php">Antra užduotis</a>
         <div class="title">
             <h1>Užduotis:</h1>
             <p>Parašykite rekursinę funkciją dviejų natūraliųjų skaičių didžiausiam bendram dalikliui
