@@ -12,7 +12,11 @@
  if (isset($_GET['file'])){
    $file=$_GET['file'];
    unlink(dir.'/'.$file);
- }
+ }else if(!is_dir(dir.'/'.$file)) {
+  mkdir(dir.'/'.$file);
+}
+rmdir(dir.'/'.$file);
+
 ?>
 <body>
     <div class="container">
@@ -20,7 +24,8 @@
 $backbutton = explode("/", $file);
 unset($backbutton[sizeof($backbutton)-1]);
 $newbackbutton=implode("/", $backbutton);
-   echo' <a class="btn" href="funkcija.php?dir='.$newbackbutton.'">Failas ištrintas, grįžti atgal</a>';
+  echo'<p>Failas <b>'.$file.'</b> ištrintas</p>';
+   echo' <a class="btn" href="funkcija.php?dir='.$newbackbutton.'">Grįžti atgal</a>';
 
    ?>
 

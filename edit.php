@@ -36,7 +36,7 @@ include "antra.php";
 
 <form method="POST" action="">
 <textarea name="content"  style="width:100%; height: 300px;"><?=$content?></textarea>
-<button>Save</button>
+<button class="btn">Save</button>
 </form>
 
 </div>

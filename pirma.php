@@ -61,6 +61,7 @@
                        return rekurs(($sk1 - $sk2), $sk2);
                     }
                 }
+                echo  "<p>Jūsų įvesti skaičiai: ". $sk1. ' ir ' .$sk2."</p>";
                 echo  "<p>Didžiausias bendras vardiklis: ". rekurs($sk1, $sk2)."</p>";
             }
 

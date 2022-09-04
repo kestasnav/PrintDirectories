@@ -56,7 +56,9 @@
             align-items: center;
             justify-content: center;
         }
-       
+       b {
+        color: black;
+       }
     </style>
 </head>
 <body>

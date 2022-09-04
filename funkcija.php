@@ -6,6 +6,7 @@
 <a id="nav" href="pirma.php">Pirma užduotis</a>
 <body>   
     <div class="container">
+      
 <?php
 function printDir($dir){    
 
@@ -19,17 +20,31 @@ function printDir($dir){
     unset($backbutton[sizeof($backbutton)-1]);
     $newbackbutton=implode("/", $backbutton);
    echo' <a href="funkcija.php?dir='.$newbackbutton.'"><p class="btn">Atgal</p></a>';
-  
+   echo'<form method="POST" action="create.php">
+   <input type="text" name="textas" placeholder="Įveskite failo pavadinimą">
+   <label>Pasirinkite Failo tipą</label>
+   <select name="files" id="file">
+     <option value="failas">Pasirinkite Failo tipą</option>
+     <option value="text">Text</option>
+     <option value="php">PHP</option>
+     <option value="html">HTML</option>
+     <option value="css">CSS</option>
+     <option value="folder">Folder</option>
+   </select>';
+   echo'<button>Create</button>';
+    echo' </form>'; 
     while($item=readdir($d)){
         if ($item=='.' || $item=='..'){
             continue;
-        }     
+        }    
+       
 
       if (is_dir(dir.'/'.$dir.'/'.$item) ){
         echo "<li class='folders'>";       
         echo "<img src='folder.png' style='width:24px'>";
         echo" <a href='?dir=".$dir.'/'.$item."'> <b>$item</b>";           
-        echo' <div class="knopkes">';        
+        echo' <div class="knopkes">';
+        echo "<a class='btn' href='delete.php?file=$dir/$item'>Delete</a>";        
         echo "</a>";
         echo "</li>";
       }else{
