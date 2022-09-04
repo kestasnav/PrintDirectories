@@ -6,6 +6,6 @@
 # Delete forma:
 ![delete](https://user-images.githubusercontent.com/107037107/188166981-87f90534-c17c-4002-887a-d96c05d04b58.png)
 # Direktorijų atvaizdavimo forma:
-![antra](https://user-images.githubusercontent.com/107037107/188167045-8e262c8b-432f-43fa-8539-470f19e9bfcb.png)
+![screencapture-localhost-RekursinesFunkcijos-funkcija-php-2022-09-04-11_42_39](https://user-images.githubusercontent.com/107037107/188305191-fba0ccfc-45e7-4a1a-9b23-687639169854.png)
 # Didžiausio bendro vardiklio užduotis:
 ![pirma](https://user-images.githubusercontent.com/107037107/188167115-e6bfc4a7-ea83-4023-bad7-80910c653597.png)
