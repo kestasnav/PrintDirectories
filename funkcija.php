@@ -17,7 +17,7 @@ include_once('config.php');
       echo "<ul>";
          
     
-      echo '<form method="POST" action="">
+      echo '<form method="POST" action="search.php">
       <label><b>Ieškoti failo: </b></label>
       <input type="hidden" name="path" value='.$dir.'>
       <input type="search" name="search" placeholder="Įveskite failo pavadinimą">
