@@ -1,7 +1,15 @@
+<?php
+session_start();
+if (!(isset($_SESSION['login']) && $_SESSION['login'] == 1)) {
+    header("location:login.php");
+    die();
+}
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,9 +22,11 @@
             max-width: 800px;
             margin: 0 auto;
         }
+
         body {
             background-color: lightskyblue;
         }
+
         #nav {
             text-decoration: none;
             font-size: 20px;
@@ -28,14 +38,16 @@
             background-color: lawngreen;
             color: white;
         }
-        li, a {
+
+        li,
+        a {
             text-decoration: none;
             list-style: none;
             text-emphasis: none;
             margin-top: 20px;
             margin-bottom: 20px;
         }
-      
+
         .btn {
             text-decoration: none;
             font-size: 15px;
@@ -46,30 +58,35 @@
             background-color: red;
             color: white;
             margin: 5px;
-          
+
         }
+
         .knopkes {
             float: right;
         }
+
         img {
             padding-right: 10px;
             align-items: center;
             justify-content: center;
         }
-       b {
-        color: black;
-       }
+
+        b {
+            color: black;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
-    
- 
-    <h4>Jūs esate prisijungęs: </h4>
-    <a class='btn' href="login.php?logout=1">Atsijungti</a>
 
-   
+        <?=
+        $user = '';
+        $user = $_SESSION['user'];
+        ?>
+        <p>Jūs esate prisijungęs: <b><?= $user ?></b><a class='btn' href="login.php?logout=1">Atsijungti</a>
+        </p>
     </div>
-   
 </body>
+
 </html>

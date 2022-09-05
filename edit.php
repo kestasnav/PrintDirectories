@@ -2,16 +2,6 @@
 include "antra.php";
 ?>
 
- <?php
-  session_start();
-  if (!(isset($_SESSION['login']) && $_SESSION['login']==1)){
-    header("location:login.php");
-    die();
-  }
-  
-?> 
-
-
 <?php
  include_once('config.php');
  if (isset($_GET['file'])){
