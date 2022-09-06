@@ -8,6 +8,7 @@ echo'<div class="container">
 <body>';
 $file = '';
 $result=0;
+
 function printDir($dir, $name){
     $d=opendir($dir);
     global $result;
@@ -18,8 +19,12 @@ function printDir($dir, $name){
       }
       
       if ($item==$name){
+        if (isset($_POST['search'])){
+  
+          $kelias = $_POST['path'];
+        }
        // echo "$dir/$item <br>";
-        echo "<a href='edit.php?file=$item'>$dir/<b>$item</b></a>";
+        echo "<a href='edit.php?file=.$kelias/$item'>$dir/<b>$item</b></a>";
         $result++;
       }
 
@@ -35,8 +40,8 @@ function printDir($dir, $name){
 
  if (isset($_POST['search'])){
     $file=$_POST['search'];
-    
-    $files=printDir(dir.'/'.$_POST['path'], $file);
+    $kelias = $_POST['path'];
+    $files=printDir(dir.'/'.$kelias, $file);
 
     if ($files==0){
         echo "<br><br>Failas nerastas";
